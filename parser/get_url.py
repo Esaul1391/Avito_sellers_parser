@@ -1,36 +1,21 @@
-from selenium import webdriver
-from selenium_stealth import stealth
-from selenium.webdriver.common.by import By
-from fake_useragent import UserAgent
-from selenium.webdriver.common.action_chains import ActionChains
-import random
 import time
-import csv
-from collections import Counter
-import os
 
+import undetected_chromedriver as uc
 
 
 def get_url(url):
-    useragent = UserAgent()
-
-    options = webdriver.ChromeOptions()
-    options.add_argument("start-maximized")
-    options.add_experimental_option("excludeSwitches", ["enable-automation"])
-    options.add_experimental_option('useAutomationExtension', False)
-    # options.add_argument(f"user-agent={useragent.random}")
-    # options.add_argument("--disable-blink-features=AutomationControlled")
-    # options.add_argument('--headless')
-    options.add_argument('--no-sandbox')
-    driver = webdriver.Chrome(options=options)
-    stealth(driver,
-            languages=["en-US", "en"],
-            vendor="Google Inc.",
-            platform="Win32",
-            webgl_vendor="Intel Inc.",
-            renderer="Intel Iris OpenGL Engine",
-            fix_hairline=True,
-            )
+    driver = uc.Chrome( )
     driver.get(url)
+    time.sleep(22)
+    print(driver.title)
+    # driver.save_screenshot('nowsecure.png')
 
-    return driver
+
+def main():
+    url = 'http://www.avito.ru/moskva/predlozheniya_uslug/oborudovanie_proizvodstvo/proizvodstvo_obrabotka-ASgBAgICAkSYC7SfAaALiKAB?cd=1&p=1&q=3d+печать'
+    get_url(url)
+
+
+
+if __name__ == "__main__":
+    main()
