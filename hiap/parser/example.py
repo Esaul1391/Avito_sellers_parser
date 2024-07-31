@@ -1,13 +1,14 @@
-from selenium import webdriver
-from selenium_stealth import stealth
-from selenium.webdriver.common.by import By
-from fake_useragent import UserAgent
-from selenium.webdriver.common.action_chains import ActionChains
+import csv
+import os
 import random
 import time
-import csv
 from collections import Counter
-import os
+
+from fake_useragent import UserAgent
+from selenium import webdriver
+from selenium.webdriver.common.action_chains import ActionChains
+from selenium.webdriver.common.by import By
+from selenium_stealth import stealth
 
 # Устанавливаем случайное время ожидания между запросами
 min_delay = 1  # Минимальное время задержки в секундах

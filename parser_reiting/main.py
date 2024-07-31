@@ -1,5 +1,6 @@
+import logging
+from parser_reiting.sellers import update_sellers
 
-from data.sellers import  update_sellers
 
 def main():
     update_sellers()

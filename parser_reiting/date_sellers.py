@@ -3,7 +3,7 @@ import json
 
 def load_sellers():
     try:
-        with open(r'C:\Users\13\Desktop\Avito_sellers_parser\data\sellers_link.json', 'r', encoding='utf-8') as file:
+        with open(r'/data/sellers_link.json', 'r', encoding='utf-8') as file:
             return json.load(file)
     except FileNotFoundError:
         return {}

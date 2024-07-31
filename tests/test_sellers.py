@@ -1,9 +1,10 @@
-import sys
 import os
+import sys
+from unittest.mock import mock_open, patch
+
 import pytest
-from unittest.mock import patch, mock_open
-from bs4 import BeautifulSoup
-from data.sellers import update_sellers, check_new_seller
+
+from parser_reiting import check_new_seller
 
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
