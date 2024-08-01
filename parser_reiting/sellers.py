@@ -48,7 +48,7 @@ def check_new_seller(sellers_link: dict) -> dict:
             key = name
             link = f"http://www.avito.ru{seller}"
             if key and key not in sellers_link:
-                sellers_link[key] = {'link': link, 'top sales': {}}
+                sellers_link[key] = {'link': link, 'top sales': []}
                 logger.info(f"Добавил продавца: {key} -> {link}")
 
     return sellers_link
